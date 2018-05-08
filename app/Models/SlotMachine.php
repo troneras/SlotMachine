@@ -2,8 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\{Board, Line, Symbol};
-
 class SlotMachine
 {
 	// this should go to a configuration file or fetched from a DDBB
@@ -70,11 +68,12 @@ class SlotMachine
 
 	public function __toString()
 	{
-		$output = [];
-		$output['board'] = (string)$this->getBoard();
-		$output['paylines'] = $this->getPaylines();
-		$output['bet_amount'] = $this->getBetAmount();
-		$output['total_win'] = $this->getTotalWin();
+		$output = [				
+			'board'	=> (string)$this->getBoard(),
+			'paylines' => $this->getPaylines(),
+			'bet_amount' => $this->getBetAmount(),
+			'total_win' => $this->getTotalWin()
+		];
 
 		return json_encode($output, JSON_PRETTY_PRINT );	
 	}

@@ -56,7 +56,7 @@ class Line
 	public function toArray()
 	{
 		$output = [];
-		foreach ($this->payline as $key => $symbol) {
+		foreach ($this->payline as $symbol) {
 			$output[] = (string)$symbol;
 		}
 		return $output;
